@@ -1,0 +1,201 @@
+/*
+The CSS code gets to executed from top to bottom and left ro right
+*/
+
+
+/* CSS reset
+(all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+
+/* General styles
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
+*/
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    font-size: 100%;
+    font-family: sans-serif;
+    color: #eee9dc;
+    background-image: url('../images/flag.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Header styles
+(all the styles inside the < header > or < nav > tags)
+*/
+
+
+/* Content styles
+(all the styles inside the < sections > or < aside > tags)
+*/
+
+h2 {
+    margin: 3em 0 0 0;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    color: red;
+    text-transform: uppercase;
+}
+
+
+/* -------------------------------------
+* timeline
+* ------------------------------------- */
+
+#timeline {
+    list-style: none;
+    margin: 50px 0 30px 120px;
+    padding-left: 30px;
+    border-left: 8px solid dimgrey;
+}
+
+#timeline li {
+    position: relative;
+}
+
+#timeline p {
+    margin: 0 0 15px;
+}
+
+.date {
+    margin-top: -10px;
+    top: 50%;
+    left: -158px;
+    font-size: 1.3em;
+    line-height: 20px;
+    position: absolute;
+    color: yellow;
+    text-shadow: -1px 2px 2px #000000;
+}
+
+.circle {
+    margin-top: -10px;
+    top: 50%;
+    left: -42px;
+    width: 10px;
+    height: 10px;
+    background-color: dimgrey;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+}
+
+.content {
+    max-height: 20px;
+    padding: 50px 20px 0;
+    background-color: dimgrey;
+    opacity: .8;
+    border-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0.5em;
+    position: relative;
+}
+
+.content:before,
+.content:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    position: absolute;
+    pointer-events: none;
+    right: 100%;
+}
+
+.content:before {
+    border-right-color: inherit;
+    border-width: 20px;
+    top: 50%;
+    margin-top: -20px;
+}
+
+.content:after {
+    border-right-color: transparent;
+    border-width: 17px;
+    top: 50%;
+    margin-top: -17px;
+}
+
+.content p {
+    max-height: 0;
+    color: transparent;
+    text-align: justify;
+    word-break: break-word;
+    hyphens: auto;
+    overflow: hidden;
+}
+
+label {
+    font-size: 1.3em;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    top: 20px;
+    transition: transform 0.2s linear;
+    color: yellow;
+    text-shadow: -1px 2px 2px #000000;
+}
+
+.radio {
+    display: none;
+}
+
+.radio:checked + .relative label {
+    cursor: auto;
+    transform: translateX(42px);
+}
+
+.radio:checked + .relative .circle {
+    background: red;
+}
+
+.radio:checked ~ .content {
+    max-height: 180px;
+    border-color: #eee9dc;
+    margin-right: 20px;
+    font-weight: 900;
+    color: white;
+    transform: translateX(20px);
+    transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+}
+
+.radio:checked ~ .content p {
+    max-height: 200px;
+    background-color: dimgrey;
+    color: #eee9dc;
+    transition: color 0.3s linear 0.3s;
+}
+
+
+/* Footer styles
+(all the styles inside the < footer > tag)
+*/
+
+
+/* Responsive styles
+(the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+*/
