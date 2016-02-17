@@ -190,6 +190,19 @@ label {
     transition: color 0.3s linear 0.3s;
 }
 
+#button {
+    margin-top: -.5em;
+}
+
+#submit {
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 1em;
+    background-color: red;
+}
+
 
 /* Footer styles
 (all the styles inside the < footer > tag)
