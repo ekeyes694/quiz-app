@@ -94,7 +94,8 @@ h2 {
 }
 
 .circle {
-    margin-top: -10px;
+    margin-top: -4px;
+    margin-left: 3px;
     top: 50%;
     left: -42px;
     width: 10px;
